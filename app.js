@@ -53,6 +53,7 @@ function addColumn() {
 
 function addRow() {
     const numOfColumn = tableColumnContainer.childElementCount
+    if(numOfColumn < 2) return alert("please add some column first")
 
     const tr = document.createElement('tr')
     tr.className = 'table-row-tr'
