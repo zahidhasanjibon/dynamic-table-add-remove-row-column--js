@@ -42,10 +42,28 @@ function addColumn() {
     const columnMarkUp = `
                 <div class="d-flex align-items-center" data-columnnum = ${columnIdentityNum}>
                     ${columnName} <span onclick="handleColumnDelete(event)" class="delete-column">x</span>
-                </div>
+                     </div>
             `
     th.innerHTML = columnMarkUp
     tableColumnContainer.appendChild(th)
+
+    const rowCont = document.querySelectorAll('.table-row-tr')
+    for (let i = 0; i < rowCont.length; i++) {
+        console.log(columnIdentityNum);
+        console.log(rowCont[i].childElementCount);
+            rowCont[i].childElementCount < columnIdentityNum
+            const td = document.createElement("td")
+            const inputFileddMarkup = `
+                        <div class="d-flex">
+                        <span class="input-value-showing-div"> </span>
+                        <input type="text" class="form-control"/>
+                        </div>
+                        `
+            td.innerHTML = inputFileddMarkup
+            rowCont[i].appendChild(td)
+    }
+
+
     columnNameInputFiled.value = ''
 }
 
